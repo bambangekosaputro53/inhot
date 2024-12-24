@@ -3,9 +3,29 @@ FROM ubuntu:20.04
 # Install dependencies
 RUN apt-get update && apt-get install -y \
     wget \
+    wget \
     chmod \
     bash \
-    && rm -rf /var/lib/apt/lists/*
+    python3 \
+    python3-pip \
+    tar \
+    build-essential \
+    libx11-xcb1 \
+    libxcomposite1 \
+    libxcursor1 \
+    libxdamage1 \
+    libxi6 \
+    libxtst6 \
+    libnss3 \
+    libcups2 \
+    libxss1 \
+    libxrandr2 \
+    libatk1.0-0 \
+    libgtk-3-0 \
+    libavahi-client-dev \
+    fonts-liberation \
+    --no-install-recommends && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
 WORKDIR /app
